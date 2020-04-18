@@ -22,6 +22,6 @@ class QuestionController extends Controller
         $question = $survey->questions()->create($data['question']);
         $question->answers()->createMany($data['answer']);
 
-        return redirect('survey/' . $survey->id);
+        return redirect('surveys/' . $survey->id);
     }
 }
