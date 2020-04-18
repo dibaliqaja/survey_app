@@ -20,3 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/surveys/create', 'SurveyController@create');
+Route::post('/surveys', 'SurveyController@store');
+Route::get('/surveys/{survey}', 'SurveyController@show');

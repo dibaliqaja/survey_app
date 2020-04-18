@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    <a href="/surveys/create" class="btn btn-dark">Create New Survey</a>
                 </div>
             </div>
         </div>
