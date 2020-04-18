@@ -24,3 +24,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/surveys/create', 'SurveyController@create');
 Route::post('/surveys', 'SurveyController@store');
 Route::get('/surveys/{survey}', 'SurveyController@show');
+
+Route::get('/surveys/{survey}/questions/create', 'QuestionController@create');
+Route::post('/surveys/{survey}/questions', 'QuestionController@store');
+// Route::get('/surveys/{survey}', 'SurveyController@show');
