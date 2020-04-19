@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Question;
 use App\Survey;
 use Illuminate\Http\Request;
 
@@ -23,5 +24,16 @@ class QuestionController extends Controller
         $question->answers()->createMany($data['answer']);
 
         return redirect('surveys/' . $survey->id);
+    }
+
+    public function destroy(Survey $survey, Question $question)
+    {
+        $question->answers()->delete();
+        $question->delete();
+        if ($question->delete() == TRUE) {
+            return 'A';
+        }
+
+        return redirect($survey->path());
     }
 }

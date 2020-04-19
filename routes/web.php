@@ -27,6 +27,7 @@ Route::get('/surveys/{survey}', 'SurveyController@show');
 
 Route::get('/surveys/{survey}/questions/create', 'QuestionController@create');
 Route::post('/surveys/{survey}/questions', 'QuestionController@store');
+Route::delete('/surveys/{survey}/questions/{question}', 'QuestionController@destroy');
 
 Route::get('/takesurveys/{survey}-{slug}', 'TakeSurveyController@show');
 Route::post('/takesurveys/{survey}-{slug}', 'TakeSurveyController@store');
